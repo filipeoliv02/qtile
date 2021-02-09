@@ -143,15 +143,20 @@ for i, (name, kwargs) in enumerate(group_names, 1):
     keys.append(Key([mod, "shift"], str(i), togroup_screen(name)))
 
 
+layout_theme = {"border_width": 3,
+                "margin": 3,
+                "border_focus": "bbc2cf",
+                "border_normal": "282c34"
+                }
 
 layouts = [
     layout.Max(),
     layout.Stack(num_stacks=3),
-    layout.Bsp(),
-    layout.Columns(),
-    layout.Matrix(),
-    layout.MonadTall(),
-    layout.MonadWide(),
+    layout.Bsp(**layout_theme),
+    layout.Columns(**layout_theme),
+    layout.Matrix(**layout_theme),
+    layout.MonadTall(**layout_theme),
+    layout.MonadWide(**layout_theme),
     # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
